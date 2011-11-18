@@ -1,3 +1,5 @@
+import AndroidKeys._
+
 organization := "$organization$"
 
 name := "$name$"
@@ -10,9 +12,9 @@ seq(AndroidProject.androidSettings: _*)
 
 platformName in Android := "android-$api_level$"
 
-manifestPath in Android <<= (baseDirectory, manifestName in Android) (_ / _)
+manifestPath in Android <<= (baseDirectory, manifestName in Android) map ((b, m) => Seq(b / m))
 
-manifestTemplatePath in Android <<= (manifestPath in Android) (mp => mp)
+manifestTemplatePath in Android <<= (baseDirectory, manifestName in Android) (_ / _)
 
 mainAssetsPath in Android <<= baseDirectory (_ / "assets")
 
