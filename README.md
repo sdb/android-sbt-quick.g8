@@ -7,7 +7,7 @@ This template is similar to the [android-app](https://github.com/jberkel/android
 
 ## Usage
 
-   g8 sdb/android-sbt-quick
+    g8 sdb/android-sbt-quick
 
 ## References
 
