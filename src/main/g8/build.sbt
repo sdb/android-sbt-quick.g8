@@ -8,6 +8,8 @@ version := "$version$"
 
 scalaVersion := "$scala_version$"
 
+libraryDependencies += "com.github.jbrechtel" %% "robospecs" % "0.2-SNAPSHOT" % "test"
+
 seq(AndroidProject.androidSettings: _*)
 
 platformName in Android := "android-$api_level$"
